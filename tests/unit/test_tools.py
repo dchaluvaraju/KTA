@@ -1,5 +1,5 @@
 import json
-import pytest
+
 from pytest_mock import MockerFixture
 
 from k8s_triage.agent.tools import TOOLS_REGISTRY, execute_tool, get_openai_tools
