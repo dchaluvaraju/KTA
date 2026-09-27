@@ -1,0 +1,12 @@
+openai>=1.40.0
+kubernetes>=30.0.0
+pydantic>=2.7.0
+pydantic-settings
+typer
+rich
+
+[dev]
+pytest
+pytest-mock
+ruff
+mypy

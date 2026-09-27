@@ -1,0 +1,39 @@
+[project]
+name = "k8s-triage-assistant"
+version = "0.1.0"
+description = "Kubernetes Triage Assistant using OpenAI"
+authors = [
+    {name = "dchaluvaraju"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.40.0",
+    "kubernetes>=30.0.0",
+    "pydantic>=2.7.0",
+    "pydantic-settings",
+    "typer",
+    "rich"
+]
+
+[project.scripts]
+k8s-triage = "k8s_triage.cli:app"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-mock",
+    "ruff",
+    "mypy"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
