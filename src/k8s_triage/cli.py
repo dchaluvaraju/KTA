@@ -2,11 +2,32 @@
 import typer
 from rich.console import Console
 
+from k8s_triage import __version__
 from k8s_triage.agent.loop import AgentController
 from k8s_triage.ui.renderer import render_rca
 
 app = typer.Typer(help="Kubernetes Triage Assistant CLI")
 console = Console()
+
+
+def version_callback(value: bool) -> None:
+    if value:
+        console.print(f"k8s-triage version {__version__}")
+        raise typer.Exit()
+
+
+@app.callback()
+def main(
+    version: bool | None = typer.Option(
+        None,
+        "--version",
+        "-v",
+        help="Show the application version and exit.",
+        callback=version_callback,
+        is_eager=True,
+    ),
+) -> None:
+    """Kubernetes Triage Assistant CLI."""
 
 @app.command()
 def analyze(

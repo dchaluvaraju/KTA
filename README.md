@@ -114,3 +114,10 @@ A GitHub Actions workflow (`.github/workflows/ci.yaml`) runs on every pull reque
 - Strict static type checking with **Mypy**
 - Automated test execution with **Pytest**
 
+## Releases & Versioning
+
+This project adheres to [Semantic Versioning (SemVer 2.0.0)](https://semver.org/) and follows [Keep a Changelog](https://keepachangelog.com/).
+- See [CHANGELOG.md](CHANGELOG.md) for version release notes.
+- See [RELEASING.md](RELEASING.md) for release automation details and step-by-step guides.
+
+

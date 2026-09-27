@@ -24,7 +24,8 @@ dev = [
     "pytest",
     "pytest-mock",
     "ruff",
-    "mypy"
+    "mypy",
+    "build"
 ]
 
 [build-system]
