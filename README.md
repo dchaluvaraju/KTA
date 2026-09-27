@@ -1,5 +1,7 @@
 # Kubernetes Triage Assistant (`k8s-triage-agent`)
 
+![KTA Logo](docs/logo.jpg)
+
 A production-ready, autonomous CLI and service daemon that inspects, analyzes, and troubleshoots Kubernetes cluster issues using the OpenAI SDK tool-calling paradigm.
 
 ## Features
