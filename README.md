@@ -59,7 +59,8 @@ spec:
     image: busybox:latest
     command: ["sh", "-c"]
     args:
-    - echo "Starting payment service...";
+    - |
+      echo "Starting payment service...";
       echo "Connecting to DB at postgres://db.internal:5432...";
       sleep 2;
       echo "FATAL: Connection refused. Missing DB credentials secret.";
