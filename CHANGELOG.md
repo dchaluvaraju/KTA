@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-09-29
+
+### Fixed
+- Fixed OpenAI 400 error (`invalid_function_parameters`) caused by missing `additionalProperties: false` in strict tool parameter schemas by utilizing `openai.pydantic_function_tool`.
+- Fixed multiline shell script YAML syntax in quickstart pod manifest.
+
 ## [0.1.0] - 2026-09-27
 
 ### Added
