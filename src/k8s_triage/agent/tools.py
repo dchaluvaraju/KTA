@@ -1,6 +1,8 @@
 import json
 from typing import Any
 
+from openai import pydantic_function_tool
+from openai.types.chat import ChatCompletionFunctionToolParam
 from pydantic import BaseModel, Field
 
 from k8s_triage.k8s import operations
@@ -55,19 +57,17 @@ TOOLS_REGISTRY: dict[str, dict[str, Any]] = {
     }
 }
 
-def get_openai_tools() -> list[dict[str, Any]]:
+
+def get_openai_tools() -> list[ChatCompletionFunctionToolParam]:
     """Generate strict OpenAI tool definitions from the registry."""
-    tools = []
+    tools: list[ChatCompletionFunctionToolParam] = []
     for name, metadata in TOOLS_REGISTRY.items():
-        tools.append({
-            "type": "function",
-            "function": {
-                "name": name,
-                "description": metadata["description"],
-                "parameters": metadata["schema"].model_json_schema(),
-                "strict": True
-            }
-        })
+        tool = pydantic_function_tool(
+            metadata["schema"],
+            name=name,
+            description=metadata["description"],
+        )
+        tools.append(tool)
     return tools
 
 def execute_tool(name: str, arguments: str) -> str:

@@ -10,6 +10,7 @@ def test_get_openai_tools() -> None:
     assert len(tools) == len(TOOLS_REGISTRY)
     assert all(t["type"] == "function" for t in tools)
     assert all(t["function"]["strict"] is True for t in tools)
+    assert all(t["function"].get("parameters", {}).get("additionalProperties") is False for t in tools)
 
 
 def test_execute_tool_invalid_name() -> None:
