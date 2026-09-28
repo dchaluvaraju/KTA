@@ -1,5 +1,7 @@
 # Kubernetes Triage Assistant (`k8s-triage-agent`)
 
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+
 ![KTA Logo](docs/logo.jpg)
 
 A production-ready, autonomous CLI and service daemon that inspects, analyzes, and troubleshoots Kubernetes cluster issues using the OpenAI SDK tool-calling paradigm.
@@ -120,5 +122,9 @@ A GitHub Actions workflow (`.github/workflows/ci.yaml`) runs on every pull reque
 This project adheres to [Semantic Versioning (SemVer 2.0.0)](https://semver.org/) and follows [Keep a Changelog](https://keepachangelog.com/).
 - See [CHANGELOG.md](CHANGELOG.md) for version release notes.
 - See [RELEASING.md](RELEASING.md) for release automation details and step-by-step guides.
+
+## License
+
+Distributed under the Apache 2.0 License. See [`LICENSE`](LICENSE) for more details.
 
 
